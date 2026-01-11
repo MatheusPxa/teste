@@ -1,7 +1,17 @@
 {
   "extends": "@adonisjs/tsconfig/tsconfig.app.json",
   "compilerOptions": {
-    "rootDir": "./",
-    "outDir": "./build"
-  }
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "outDir": "./build",
+    "baseUrl": ".",
+    "paths": {
+      "App/*": ["app/*"]
+    },
+    "strict": true,
+    "types": ["node", "@adonisjs/core"]
+  },
+  "include": ["./**/*.ts"]
 }
