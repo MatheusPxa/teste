@@ -1,6 +1,11 @@
 import { defineConfig } from '@adonisjs/core/app'
 
 export default defineConfig({
+    directories: {
+    controllers: 'app/controllers',
+    models: 'app/models',
+    middleware: 'app/middleware',
+  },
   /*
   |--------------------------------------------------------------------------
   | Experimental flags
@@ -57,7 +62,11 @@ export default defineConfig({
   | List of modules to import before starting the application.
   |
   */
-  preloads: [() => import('#start/routes'), () => import('#start/kernel')],
+  preloads: [
+    () => import('#start/server'),
+    () => import('#start/routes'),
+    () => import('#start/kernel'),
+  ],
 
   /*
   |--------------------------------------------------------------------------
